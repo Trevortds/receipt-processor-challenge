@@ -27,9 +27,7 @@ Example Response:
 { "id": "7fb1377b-b223-49d9-a31a-5a02701dd310" }
      */
     processReceipt(req: Request, res: Response){
-        logger.info("test")
         const receiptData = req.body
-        logger.info(`process receipt ${receiptData}`)
         const id = receiptsService.addReceipt(receiptData)
         res.status(201).send({ "id": id })
     }
@@ -49,9 +47,7 @@ Example Response:
 { "points": 32 }
      */
     getPoints(req:Request, res: Response) {
-        logger.info(`get points for ${req.params.id}`)
         const id = req.params.id
-        logger.info(`get points for ${id}`)
         const points = receiptsService.getPoints(id)
 
         res.status(200).send({ "points": points })
