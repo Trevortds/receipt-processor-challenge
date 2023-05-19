@@ -5,10 +5,16 @@ This is a subsitute for some kind of persistent storage backend.
 IRL this would probably be handled with a database through an ORM or something like that.
  */
 
+import {Receipt} from "../models/Receipt";
+
 class ReceiptsRepository {
-    storedReceipts: Array<string> = []
-    addReceipt(receipt: string) {
-        this.storedReceipts.push(receipt);
+    storedReceipts: Map<string, Receipt> = new Map<string, Receipt>()
+    addReceipt(id: string, receipt: Receipt) {
+        this.storedReceipts.set(id, receipt);
+    }
+
+    getReceipt(id: string): Receipt | undefined {
+        return this.storedReceipts.get(id);
     }
 }
 

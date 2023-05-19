@@ -12,6 +12,7 @@ const logLevels = {
 
 const logger = createLogger({
     levels: logLevels,
+    format: process.env.NODE_ENV !== "production" ? format.cli() : undefined,
     transports: [new transports.Console()], // depending on deployment method we might put more transports here
     // assuming we're using containers and capturing the output (eg in cloudwatch), console is fine.
 })

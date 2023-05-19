@@ -5,16 +5,21 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "debug": "nodemon --exec \"node --inspect-brk=0.0.0.0:9229 --require ts-node/register src/index.ts\""
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
+    "express-joi-validation": "^5.0.1",
     "http-errors": "~1.6.3",
+    "joi": "^17.9.2",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
+    "ts-node": "^10.9.1",
     "winston": "^3.8.2"
   },
   "devDependencies": {
