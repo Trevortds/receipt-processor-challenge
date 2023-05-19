@@ -1,6 +1,5 @@
 import loggerModule from "morgan";
-import * as path from "path";
-import express, { Express, Request, Response} from 'express';
+import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import { receiptsRoutes } from "./routes/receipts.routes"
 

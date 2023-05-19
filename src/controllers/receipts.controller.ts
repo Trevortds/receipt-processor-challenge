@@ -1,7 +1,5 @@
 import {Request, Response} from "express";
-import logger from "../config/logger"
 import receiptsService from "../services/receipts.service"
-import {HttpError} from "../util/HttpError";
 
 class ReceiptsController {
     /*
